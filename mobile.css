@@ -1,0 +1,81 @@
+/* mobile.css */
+
+/* Common mobile adjustments */
+@media only screen and (max-width: 768px) {
+    /* Adjust the nav layout */
+    nav {
+      position: relative;
+      padding: 0.5em 1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    /* Hide the navigation list by default */
+    nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #2c2c2c;
+      position: absolute;
+      top: 70px; /* Adjust based on your nav height */
+      left: 0;
+      padding: 1em 1em;
+      margin: 0;
+    }
+  
+    /* Show nav list when active */
+    nav ul.active {
+      display: flex;
+    }
+  
+    /* Burger menu icon styling */
+    .burger {
+      display: block;
+      cursor: pointer;
+    }
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: #f0f0f0;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+  
+    /* Other mobile adjustments remain here */
+    section {
+      padding: 1em;
+    }
+    
+    .title-img,
+    .lore-img,
+    .four-img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .four-columns {
+      flex-direction: column;
+    }
+    .column {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    
+    video {
+      width: 100%;
+      height: auto;
+    }
+    
+    .gallery-belt {
+      height: auto;
+    }
+    .belt-track {
+      animation-duration: 20s; /* Optional: adjust scrolling speed */
+    }
+  }
+  

@@ -3,6 +3,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #1e1e1e;
     color: #f0f0f0;
+    text-align: center;
   }
   
   nav {
@@ -38,7 +39,6 @@ body {
   
   header {
     text-align: center;
-    
     background-color: #3a3a3a;
   }
   
@@ -48,9 +48,12 @@ body {
   }
   
   section {
-    padding: 2em;
-    max-width: 1000px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2em;
+    max-width: 80%;
     margin: auto;
+    text-align: center;
   }
   
   video {
@@ -188,38 +191,6 @@ body {
     font-size: 0.9em;
     overflow-y: auto;
   }
-  #mobs {
-    padding: 2em;
-    background: #1e1e1e;
-    color: #f0f0f0;
-    max-width: 1100px;
-    margin: auto;
-  }
-  
-  .enemy-card {
-    background: #2c2c2c;
-    border-left: 5px solid #c5a552;
-    border-radius: 10px;
-    padding: 1em 1.5em;
-    margin-bottom: 1.5em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    transition: transform 0.2s ease;
-  }
-  
-  .enemy-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .enemy-card h3 {
-    margin-top: 0;
-    color: #f5d36c;
-  }
-  
-  .enemy-card .type {
-    font-size: 0.9em;
-    font-weight: normal;
-    color: #bbb;
-  }
 
   #gallery {
     padding: 2em;
@@ -297,14 +268,14 @@ body {
   }
 
   .modal-content {
-background-color: #3e3e3e; /* New background color (light blue) */
-margin: 15% auto;
-padding: 20px;
-color: white;
-width: 80%;
-position: relative;
-border-radius: 15px; /* Curved edges */
-}
+    background-color: #3e3e3e; /* New background color (light blue) */
+    margin: 15% auto;
+    padding: 20px;
+    color: white;
+    width: 80%;
+    position: relative;
+    border-radius: 15px; /* Curved edges */
+  }
 
   /* Close Button */
   .close {
@@ -358,7 +329,6 @@ border-radius: 15px; /* Curved edges */
   .mob-image {
     width: 200px;
     height: 200px;
-    background-image: url("Mobs.png");
     background-size: 1152px 768px;
     background-repeat: no-repeat;
     margin-bottom: 20px;
@@ -376,14 +346,6 @@ border-radius: 15px; /* Curved edges */
     font-size: 0.9em;
     font-weight: normal;
     color: #bbb;
-  }
-
-  p {
-    font-size: 0.95em;
-    line-height: 1.4;
-    margin: 5px 0;
-    max-width: 90%;
-    text-align: center;
   }
 
   .nav-arrow {

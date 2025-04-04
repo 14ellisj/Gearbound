@@ -1,49 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('nav ul');
-  
-    burger.addEventListener('click', function() {
-      navLinks.classList.toggle('active');
-    });
+// Combine DOMContentLoaded into one function
+document.addEventListener('DOMContentLoaded', function () {
+  const burger = document.querySelector('.burger');
+  const navLinks = document.querySelector('nav ul');
+  const backToTopButton = document.getElementById('back-to-top');
+
+  // Burger menu toggle
+  burger.addEventListener('click', function () {
+    navLinks.classList.toggle('active');
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const backToTopButton = document.getElementById('back-to-top');
-  
-    // Show or hide the button based on scroll position
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
-        backToTopButton.style.display = 'block';
-      } else {
-        backToTopButton.style.display = 'none';
-      }
-    });
-  
-    // Smooth scroll back to top on click
-    backToTopButton.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  // Back-to-top button show/hide
+  window.addEventListener('scroll', function () {
+    backToTopButton.style.display = window.pageYOffset > 300 ? 'block' : 'none';
   });
-  
-// Show the modal with the selected location's content
+
+  // Smooth scroll to top
+  backToTopButton.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+// Modal popup for district info
 function showLocationInfo(locationId) {
-  var content = document.getElementById(locationId).innerHTML;
+  const content = document.getElementById(locationId).innerHTML;
   document.getElementById('modalBody').innerHTML = content;
-  document.getElementById('modal').style.display = "block";
+  document.getElementById('modal').style.display = 'block';
 }
 
-// Hide the modal
+// Close modal via button or outside click
 function closeModal() {
-  document.getElementById('modal').style.display = "none";
+  document.getElementById('modal').style.display = 'none';
+}
+window.onclick = function (event) {
+  const modal = document.getElementById('modal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
+// Flipbook logic with jQuery
+let bookOpen = false;
+
+function closeFlipbook() {
+  $('#flipbook-wrapper').fadeOut(300);
+  bookOpen = false;
 }
 
-// Close modal if user clicks outside the modal-content area
-window.onclick = function(event) {
-  var modal = document.getElementById('modal');
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 $(function () {
   const isMobile = window.innerWidth < 768;
 
@@ -54,26 +56,19 @@ $(function () {
     display: isMobile ? 'single' : 'double'
   });
 
-  let bookOpen = false;
-
   $('#mobBookCover').click(function () {
     if (!bookOpen) {
-      $('#flipbook-wrapper').fadeIn(300, function () {
-        initFlipbook();
-      });
+      $('#flipbook-wrapper').fadeIn(300);
       bookOpen = true;
     } else {
-      $('#flipbook-wrapper').fadeOut(300);
-      bookOpen = false;
+      closeFlipbook();
     }
   });
-  
 
-  // Page navigation via arrows
+  // Page navigation
   $(document).on('click', '.nav-arrow.left', function () {
     $('#flipbook').turn('previous');
   });
-
   $(document).on('click', '.nav-arrow.right', function () {
     $('#flipbook').turn('next');
   });
@@ -88,12 +83,7 @@ $(function () {
     const touchEndX = e.originalEvent.changedTouches[0].clientX;
     const deltaX = touchStartX - touchEndX;
     if (Math.abs(deltaX) > 50) {
-      if (deltaX > 0) {
-        $('#flipbook').turn('next');
-      } else {
-        $('#flipbook').turn('previous');
-      }
+      deltaX > 0 ? $('#flipbook').turn('next') : $('#flipbook').turn('previous');
     }
   });
 });
-  

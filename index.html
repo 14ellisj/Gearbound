@@ -9,20 +9,6 @@
   <script src="turn.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 </head>
-
-<script>
-  window.addEventListener('load', () => {
-    if (typeof imageMapResize === 'function') {
-      imageMapResize();
-    }
-  });
-
-  function showLocationInfo(location) {
-    alert("You clicked on: " + location);
-    // You could replace this with a modal, side panel, or scroll-to feature
-  }
-</script>
-
 <body>
 
     <nav>
@@ -264,8 +250,11 @@
 </div>
 
 <div id="flipbook-wrapper">
-  <div id="flipbook">
-    <!-- Pages go here -->
+  <div id="flipbook-container">
+    <button class="close-flipbook" onclick="closeFlipbook()">×</button>
+
+    <div id="flipbook">
+
 
     <div class="page cover">
         <img src="Images/Mob Manual Font Page.png" alt="Gearbound Mob Field Manual Cover" />

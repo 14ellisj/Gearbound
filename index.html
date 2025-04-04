@@ -8,22 +8,36 @@
   <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)" />
 
 </head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    if (typeof imageMapResize === 'function') {
+      imageMapResize();
+    }
+  });
+
+  function showLocationInfo(location) {
+    alert("You clicked on: " + location);
+    // You could replace this with a modal, side panel, or scroll-to feature
+  }
+</script>
+
 <body>
 
     <nav>
         <img src="Images/Logo.png" alt="Gearbound Logo" class="logo"/>
-        <!-- Burger menu icon -->
         <div class="burger">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
         <ul>
+          <li><a href="#welcome">Welcome</a></li>
           <li><a href="#trailer">Trailer</a></li>
           <li><a href="#lore">Lore</a></li>
           <li><a href="#charaters">Characters</a></li>
           <li><a href="#lands">Lands</a></li>
-          <li><a href="#levels">Levels</a></li>
           <li><a href="#mobs">Mobs</a></li>
           <li><a href="#gallery">Gallery</a></li>
         </ul>
@@ -33,6 +47,24 @@
   <header>
     <img src="Images/Title and Tag.png" alt="Title" class="title-img"/>
   </header>
+
+  <section id="welcome">
+    <h2>Welcome to Gearbound</h2>
+    <p>
+      An open-world steampunk action-adventure game built for explorers, fighters, and tinkerers alike.
+    </p>
+    <p>
+      In the sprawling, gear-choked city of Cindralis, something is broken—and it’s not just the clockwork. As a young scavenger caught between revolution and ruin, you’ll explore a richly detailed open world filled with corrupted tech, rogue constructs, and long-forgotten secrets. Uncover the truth behind the Aether surge that’s tearing the city apart, and shape your path through combat, upgrades, and meaningful choices.
+    </p>
+    <p>
+      Gearbound blends classic action-RPG combat with immersive exploration and a deep progression system. Battle mechanical monstrosities, unlock powerful gadgets, master vehicle traversal, and uncover lost lore in dusty archives and dynamic events. From neon-lit vaults to overgrown botanical factories, every district has its own threats, allies, and side quests to discover.
+    </p>
+    <p>
+      Whether you're tracking rare enemies in your Mob Manual or customizing your gear to suit your playstyle, Gearbound rewards curiosity, precision, and invention. This is more than a city-it's a living machine, and you're the wrench in the gears.
+
+
+    </p>
+  </section>
 
   <section id="trailer">
     <h2>Game Trailer</h2>
@@ -155,239 +187,74 @@
 
   <section id="lands">
     <h2>The Realms of Cog City</h2>
-    <img src="Images/Map3.png" alt="Map" class="four-img"/>
-    <p>Cog City is divided into five sprawling districts, each with its own atmosphere, hazards, and secrets. From the molten depths of Brass Borough to the sky-scraping mystery of the Aether Spire, every realm offers unique challenges and lore.</p>
+    <!-- Link the image with a map for clickable areas -->
+    <img src="Images/Map3.png" alt="Map" usemap="#cogCityMap" class="four-img"/>
 
-  <h3>Brass Borough – The Industrial Heart</h3>
-  <p><strong>Theme:</strong> Steam vents, molten metal, broken machines</p>
-  <p><strong>Description:</strong> Once the city's main manufacturing hub, Brass Borough is now rusted and unstable. Conveyor belts grind against jammed cogs, and the air is thick with soot and pressure. It’s where your journey begins—hot, heavy, and full of secrets.</p>
-  <p><strong>Key Features:</strong> Furnace puzzles, gear elevators, steam-platforming</p>
+    <!-- Define clickable areas on the map (adjust coords as needed) -->
+    <map name="cogCityMap">
+      <area shape="rect" coords="65,956,467,821" alt="Brass Borough" href="javascript:void(0);" onclick="showLocationInfo('brassBorough')" />
+      <area shape="rect" coords="79,277,482,374" alt="Gleam Gardens" href="javascript:void(0);" onclick="showLocationInfo('gleamGardens')" />
+      <area shape="rect" coords="562,499,973,605"  alt="Sprocket Square" href="javascript:void(0);" onclick="showLocationInfo('sprocketSquare')" />
+      <area shape="rect" coords="1067,827,1429,928" alt="Volt Vaults" href="javascript:void(0);" onclick="showLocationInfo('voltVaults')" />
+      <area shape="rect" coords="1054,379,1443,469" alt="Aether Spire" href="javascript:void(0);" onclick="showLocationInfo('aetherSpire')" />
+    </map>
 
-  <h3>Gleam Gardens – Nature Reclaimed</h3>
-  <p><strong>Theme:</strong> Overgrown greenhouses, hybrid flora, collapsing eco-labs</p>
-  <p><strong>Description:</strong> A district once meant to feed the city has become a wild and living labyrinth. Vines strangle machinery, and plants mutated by aether energy lash out. Water puzzles and high-flying bounce mechanics rule here.</p>
-  <p><strong>Key Features:</strong> Spring-based traversal, root mazes, bio-mechanical bosses</p>
+    <p>
+      Cog City is divided into five sprawling districts, each with its own atmosphere, hazards, and secrets. From the molten depths of Brass Borough to the sky-scraping mystery of the Aether Spire, every realm offers unique challenges and lore.
+    </p>
+    
 
-  <h3>Sprocket Square – Clockwork Capital</h3>
-  <p><strong>Theme:</strong> Ticking gears, time puzzles, market ruins</p>
-  <p><strong>Description:</strong> This was the beating heart of daily life—shops, lifts, and time-regulated platforms. Now it's stuck in a broken rhythm. Expect vertical puzzles, platform syncs, and a very aggressive gear-based sentinel.</p>
-  <p><strong>Key Features:</strong> Rotating floors, market minigames, time-based switches</p>
+    <!-- Hidden content for each district -->
+    <div id="brassBorough" class="location-details">
+      <h3>Brass Borough – The Industrial Heart</h3>
+      <p><strong>Theme:</strong> Steam vents, molten metal, broken machines</p>
+      <p><strong>Description:</strong> Once the city's main manufacturing hub, Brass Borough is now rusted and unstable. Conveyor belts grind against jammed cogs, and the air is thick with soot and pressure. It’s where your journey begins—hot, heavy, and full of secrets.</p>
+      <p><strong>Key Features:</strong> Furnace puzzles, gear elevators, steam-platforming</p>
+    </div>
 
-  <h3>Volt Vaults – The Forgotten Grid</h3>
-  <p><strong>Theme:</strong> Power outages, corrupted terminals, dark corridors</p>
-  <p><strong>Description:</strong> Deep beneath Cog City lie the power vaults—once brilliant, now pitch-black. Surging conduits, glitching bots, and electric puzzles await those brave enough to descend. Bring a light... or be one.</p>
-  <p><strong>Key Features:</strong> Circuit logic puzzles, blackout areas, terminal hacking</p>
+    <div id="gleamGardens" class="location-details">
+      <h3>Gleam Gardens – Nature Reclaimed</h3>
+      <p><strong>Theme:</strong> Overgrown greenhouses, hybrid flora, collapsing eco-labs</p>
+      <p><strong>Description:</strong> A district once meant to feed the city has become a wild and living labyrinth. Vines strangle machinery, and plants mutated by aether energy lash out. Water puzzles and high-flying bounce mechanics rule here.</p>
+      <p><strong>Key Features:</strong> Spring-based traversal, root mazes, bio-mechanical bosses</p>
+    </div>
 
-  <h3>The Aether Spire – Skyward Legacy</h3>
-  <p><strong>Theme:</strong> Floating platforms, anti-gravity, corrupted energy</p>
-  <p><strong>Description:</strong> The Spire was the city’s greatest ambition—and its final mistake. The structure now floats in broken silence, warped by raw aether. Gravity shifts, mirrors lie, and your final choices await.</p>
-  <p><strong>Key Features:</strong> Aether storm hazards, puzzle illusions, moral final choice</p>
+    <div id="sprocketSquare" class="location-details">
+      <h3>Sprocket Square – Clockwork Capital</h3>
+      <p><strong>Theme:</strong> Ticking gears, time puzzles, market ruins</p>
+      <p><strong>Description:</strong> This was the beating heart of daily life—shops, lifts, and time-regulated platforms. Now it's stuck in a broken rhythm. Expect vertical puzzles, platform syncs, and a very aggressive gear-based sentinel.</p>
+      <p><strong>Key Features:</strong> Rotating floors, market minigames, time-based switches</p>
+    </div>
 
-  <p>Each district in Cog City is a story in itself, a puzzle box to unravel. As the Gearbound, you'll explore every gear, shadow, and secret Cog City has to offer.</p>
+    <div id="voltVaults" class="location-details">
+      <h3>Volt Vaults – The Forgotten Grid</h3>
+      <p><strong>Theme:</strong> Power outages, corrupted terminals, dark corridors</p>
+      <p><strong>Description:</strong> Deep beneath Cog City lie the power vaults—once brilliant, now pitch-black. Surging conduits, glitching bots, and electric puzzles await those brave enough to descend. Bring a light... or be one.</p>
+      <p><strong>Key Features:</strong> Circuit logic puzzles, blackout areas, terminal hacking</p>
+    </div>
+
+    <div id="aetherSpire" class="location-details">
+      <h3>The Aether Spire – Skyward Legacy</h3>
+      <p><strong>Theme:</strong> Floating platforms, anti-gravity, corrupted energy</p>
+      <p><strong>Description:</strong> The Spire was the city’s greatest ambition—and its final mistake. The structure now floats in broken silence, warped by raw aether. Gravity shifts, mirrors lie, and your final choices await.</p>
+      <p><strong>Key Features:</strong> Aether storm hazards, puzzle illusions, moral final choice</p>
+    </div>
   </section>
 
-  <section id="levels">
-    <h2>Story Levels</h2>
-    <p>Each district in Cog City contains two major story levels (plus one final Spire mission), blending puzzles, platforming, combat, and narrative discovery. These missions restore sections of the Great Gear Core and move the story forward.</p>
-  
-    <div class="grid">
-
-        <!-- Level 1 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Level 1<br>The Sputtering Smelter</div>
-            <div class="card-back">
-              <p><strong>Objective:</strong> Restart the furnace and reroute steam pressure.</p>
-              <p><strong>Boss:</strong> Moltdown – lava-fused smelter bot.</p>
-              <p><strong>Features:</strong> Steam vents, molten hazards, vent jumping.</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Level 2 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Level 2<br>Sparks in the Shadows</div>
-            <div class="card-back">
-              <p><strong>Objective:</strong> Restore light to the factory during a blackout.</p>
-              <p><strong>Unlock:</strong> Hex’s stealth skills.</p>
-              <p><strong>Features:</strong> EMP zones, flashlight puzzles, hacking terminals.</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Level 3 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Level 3<br>The Root of the Problem</div>
-            <div class="card-back">
-              <p><strong>Objective:</strong> Disable a rogue eco-AI causing plant overgrowth.</p>
-              <p><strong>Unlock:</strong> Springa’s bounce powers.</p>
-              <p><strong>Features:</strong> Vine puzzles, water rerouting.</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Level 4 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Level 4<br>Bloom and Doom</div>
-            <div class="card-back">
-              <p><strong>Objective:</strong> Rescue bots from the overgrown lab.</p>
-              <p><strong>Boss:</strong> The Bloommother – hybrid floral enemy.</p>
-              <p><strong>Features:</strong> Pollen clouds, bounce combat, toxic zones.</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Level 5 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Level 5<br>The Clocktower’s Secret</div>
-            <div class="card-back">
-              <p><strong>Objective:</strong> Restore the city’s time system via platform syncing.</p>
-              <p><strong>Features:</strong> Clock hands, lift puzzles, rotating gears.</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Level 6 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Level 6<br>Market Meltdown</div>
-            <div class="card-back">
-              <p><strong>Objective:</strong> Defend the district square from attack.</p>
-              <p><strong>Features:</strong> Hovercrate defense, merchant NPCs, traps.</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Level 7 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Level 7<br>Powerless</div>
-            <div class="card-back">
-              <p><strong>Objective:</strong> Traverse pitch-dark vaults and restore emergency power.</p>
-              <p><strong>Boss:</strong> Dimmrking – a darkness-based glitch entity.</p>
-              <p><strong>Features:</strong> Circuit puzzles, darkness hazards, flickering lights.</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Level 8 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Level 8<br>Feedback Loop</div>
-            <div class="card-back">
-              <p><strong>Objective:</strong> Solve 3 giant circuit puzzles to reactivate the core.</p>
-              <p><strong>Features:</strong> Pulse puzzles, rotating logic rings.</p>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Level 9 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Level 9<br>Spirefall</div>
-            <div class="card-back">
-              <p><strong>Objective:</strong> Confront OROS and determine the city’s fate.</p>
-              <p><strong>Boss:</strong> Glitched OROS – multi-phase final battle.</p>
-              <p><strong>Features:</strong> Anti-gravity, aether storms, final choice.</p>
-            </div>
-          </div>
-        </div>
-    
+  <!-- Modal Popup Structure -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modalBody">
+        <!-- District content will be inserted here -->
       </div>
-  
-    <p>Each level unlocks new powers, expands the world map, and brings the Gearbound closer to the truth. Choose your path wisely—some levels contain secrets that change the ending forever.</p>
-  </section>
-  
+    </div>
+  </div>
+
   <section id="mobs">
     <h2>Mobs</h2>
-    <img src="Images/Mobs.png" alt="Mobs" class="four-img"/>
-    <section id="mobs">
-        <h3>Enemy Bestiary</h3>
-      
-        <div class="enemy-card">
-          <h3>1. Corruptbot <span class="type">[Common Enemy]</span></h3>
-          <p><strong>Location:</strong> All districts (especially Brass Borough, Sprocket Square)</p>
-          <p><strong>Appearance:</strong> Boxy frame, red eye, erratic behavior</p>
-          <p><strong>Lore:</strong> Maintenance bots driven mad by the Aether surge.</p>
-          <p><strong>Abilities:</strong> Slap combo, self-destruct, jamming pulses</p>
-          <p><strong>Tactics:</strong> Weak to shock and bounce; best cleared in groups</p>
-        </div>
-      
-        <div class="enemy-card">
-          <h3>2. Foundry Drone <span class="type">[Elite Enemy]</span></h3>
-          <p><strong>Location:</strong> Level 1 – The Sputtering Smelter</p>
-          <p><strong>Appearance:</strong> Spider-frame, glowing joints</p>
-          <p><strong>Lore:</strong> Industrial drones now skitter and overheat uncontrollably.</p>
-          <p><strong>Abilities:</strong> Wall leaps, steam bursts</p>
-          <p><strong>Tactics:</strong> Stun mid-leap or lure into vent traps</p>
-        </div>
-      
-        <div class="enemy-card">
-          <h3>3. Foundry Drone (Moltdown) <span class="type">[BOSS]</span></h3>
-          <p><strong>Location:</strong> Furnace Core, Brass Borough</p>
-          <p><strong>Appearance:</strong> Lava-armored version of Foundry Drone</p>
-          <p><strong>Lore:</strong> Smelter AI mutated by extreme heat.</p>
-          <p><strong>Abilities:</strong> Lava floor, heat wave, flame bombs</p>
-          <p><strong>Tactics:</strong> Cool vents, jump pad dodging, valve timing</p>
-        </div>
-      
-        <div class="enemy-card">
-          <h3>4. Overgrown Turret Plant <span class="type">[Elite Enemy]</span></h3>
-          <p><strong>Location:</strong> Gleam Gardens</p>
-          <p><strong>Appearance:</strong> Carnivorous plant with mech tendrils</p>
-          <p><strong>Lore:</strong> A forgotten security bio-hybrid now rogue.</p>
-          <p><strong>Abilities:</strong> Spore bombs, vine latch, foliage shield</p>
-          <p><strong>Tactics:</strong> Bounce behind or disable with water pipes</p>
-        </div>
-      
-        <div class="enemy-card">
-          <h3>5. Snap Vine <span class="type">[Common Enemy]</span></h3>
-          <p><strong>Location:</strong> Gleam Gardens (walls and platforms)</p>
-          <p><strong>Appearance:</strong> Camouflaged snapping jaws</p>
-          <p><strong>Lore:</strong> Rapid-growth plant mutated by eco-tech.</p>
-          <p><strong>Abilities:</strong> Stuns, ambushes, chain-links</p>
-          <p><strong>Tactics:</strong> Use ranged tools or stealth to bypass</p>
-        </div>
-      
-        <div class="enemy-card">
-          <h3>6. Maintenance Bot <span class="type">[Neutral/Hostile]</span></h3>
-          <p><strong>Location:</strong> Multiple districts</p>
-          <p><strong>Appearance:</strong> Round body, tools for arms</p>
-          <p><strong>Lore:</strong> Former helpers—some now corrupted, some friendly NPCs.</p>
-          <p><strong>Variants:</strong> Friendly (e.g., Flicker), Hostile (“Malfunction Mode”)</p>
-        </div>
-      
-        <div class="enemy-card">
-          <h3>7. Glitchspawn <span class="type">[Rare Enemy]</span></h3>
-          <p><strong>Location:</strong> Volt Vaults, digital terminals</p>
-          <p><strong>Appearance:</strong> Flickering, glitching distortion</p>
-          <p><strong>Lore:</strong> Data ghosts—echoes of corrupted programs.</p>
-          <p><strong>Abilities:</strong> Teleport, temporary invisibility, disable gadgets</p>
-          <p><strong>Tactics:</strong> Track with Hex and strike during pulses</p>
-        </div>
-      
-        <div class="enemy-card">
-          <h3>8. Dimmrking <span class="type">[BOSS]</span></h3>
-          <p><strong>Location:</strong> Volt Vaults – Core Depths</p>
-          <p><strong>Appearance:</strong> Cloaked silhouette, glowing eye</p>
-          <p><strong>Lore:</strong> A corrupted fragment of OROS, born of isolation.</p>
-          <p><strong>Abilities:</strong> Shadow clones, darkness shroud, UI disruption</p>
-          <p><strong>Tactics:</strong> Use light pulses and sound to find and defeat</p>
-        </div>
-      
-        <div class="enemy-card">
-          <h3>9. Geargrind Sentinel <span class="type">[BOSS / Elite]</span></h3>
-          <p><strong>Location:</strong> Clocktower – Sprocket Square</p>
-          <p><strong>Appearance:</strong> Giant mech with piston arms and gear chest</p>
-          <p><strong>Lore:</strong> A former city defender now enforcing corrupted order.</p>
-          <p><strong>Abilities:</strong> AOE shockwave, spinning gear missiles, magnetic field</p>
-          <p><strong>Tactics:</strong> Disable via short-circuit traps and hit exposed back core</p>
-        </div>
-      </section>
+    <img src="Images/M.png" alt="Mobs" class="four-img"/>
+
       
   </section>
 
@@ -421,6 +288,9 @@
     <p>&copy; 2025 Gearbound Studios. All rights reserved.</p>
   </footer>
 
+  <button id="back-to-top">↑ Top</button>
+
   <script src="script.js"></script>
+  
 </body>
 </html>

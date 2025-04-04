@@ -117,7 +117,7 @@ body {
   
   .column {
     width: 23%; /* 4 x 23% + gap = ~100% */
-    background-color: #f0f0f0;
+    background-color: #3a3a3a;
     padding: 15px;
     box-sizing: border-box;
     border-radius: 8px;
@@ -127,12 +127,12 @@ body {
   .column h2 {
     margin-top: 0;
     font-size: 1.2rem;
-    color: #222;
+    color: white;
   }
   
   .column p {
     font-size: 0.95rem;
-    color: #444;
+    color: white;
   }
   
   .grid {
@@ -263,5 +263,72 @@ body {
       transform: translateX(-50%);
     }
   }
+
+  #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #c5a552;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hidden initially */
+    z-index: 1000;
+    font-size: 16px;
+  }
+  .four-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* The Modal (background overlay) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+  }
+
+  .modal-content {
+background-color: #3e3e3e; /* New background color (light blue) */
+margin: 15% auto;
+padding: 20px;
+color: white;
+width: 80%;
+position: relative;
+border-radius: 15px; /* Curved edges */
+}
+
+  /* Close Button */
+  .close {
+    color: #aaa;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+
+  /* Hide the district details in the page */
+  .location-details {
+    display: none;
+  }
+
+  
+  
   
   

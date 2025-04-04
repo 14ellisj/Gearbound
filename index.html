@@ -9,8 +9,19 @@
   <script src="turn.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
 </head>
-<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    if (typeof imageMapResize === 'function') {
+      imageMapResize();
+    }
+  });
 
+  function showLocationInfo(location) {
+    alert("You clicked on: " + location);
+  }
+</script>
+<body>
     <nav>
         <img src="Images/Logo.png" alt="Gearbound Logo" class="logo"/>
         <div class="burger">
@@ -28,8 +39,6 @@
           <li><a href="#gallery">Gallery</a></li>
         </ul>
       </nav>
-      
-
   <header>
     <img src="Images/Title and Tag.png" alt="Title" class="title-img"/>
   </header>

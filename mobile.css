@@ -177,6 +177,42 @@
       z-index: 1000;
       font-size: 16px;
     }
+
+    #flipbook {
+      max-width: 100%;
+      width: 100%;
+      aspect-ratio: auto;
+      height: auto;
+    }
+
+    .page {
+      padding: 15px;
+      font-size: 0.9em;
+    }
+
+    .mob-image {
+      width: 150px;
+      height: 150px;
+    }
+
+    .book-controls button,
+    .nav-arrow {
+      padding: 12px 16px;
+      font-size: 0.95em;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+
+    .cover img {
+      max-height: 80vh;
+      width: 90%;
+    }
     
   }
   

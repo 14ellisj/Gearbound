@@ -6,6 +6,8 @@
   <title>Gearbound: Chronicles of the Cog City</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="turn.min.js"></script>
 
 </head>
 
@@ -253,9 +255,134 @@
 
   <section id="mobs">
     <h2>Mobs</h2>
-    <img src="Images/M.png" alt="Mobs" class="four-img"/>
+    <p>
+      Welcome to the official Mob Book, a field-issued survival guide for all scavengers, tinkerers, and operatives navigating the gear-choked streets of Cindralis. Within these pages, you'll find profiles on hostile entities encountered throughout the city's fractured districts—each documented with field intel, known weaknesses, and tactical advice.
+    </p>
+    <p>
+      Study well. These machines weren’t built to be merciful.
+    </p>
+    <img src="Images/Mob Manual Font Page.png" alt="Mobs" id="mobBookCover" class="four-img" style="cursor: pointer;" />
 
-      
+</div>
+
+<div id="flipbook-wrapper">
+  <div id="flipbook">
+    <!-- Pages go here -->
+
+    <div class="page cover">
+        <img src="Images/Mob Manual Font Page.png" alt="Gearbound Mob Field Manual Cover" />
+      </div>
+    
+      <!-- 1. Corruptbot -->
+      <div class="page">
+        <img src="Images/Mobs/1.png" class="mob-image corruptbot">
+        <h3>1. Corruptbot <span class="type">[Common Enemy]</span></h3>
+        <p><strong>Location:</strong> All districts (especially Brass Borough, Sprocket Square)</p>
+        <p><strong>Appearance:</strong> Boxy frame, red eye, erratic behavior</p>
+        <p><strong>Lore:</strong> Maintenance bots driven mad by the Aether surge.</p>
+        <p><strong>Abilities:</strong> Slap combo, self-destruct, jamming pulses</p>
+        <p><strong>Tactics:</strong> Weak to shock and bounce; best cleared in groups</p>
+      </div>
+    
+      <!-- 2. Foundry Drone -->
+    <div class="page">
+    <img src="Images/Mobs/2.png" class="mob-image corruptbot">
+    <h3>2. Foundry Drone <span class="type">[Elite Enemy]</span></h3>
+    <p><strong>Location:</strong> Level 1 – The Sputtering Smelter</p>
+    <p><strong>Appearance:</strong> Spider-frame, glowing joints</p>
+    <p><strong>Lore:</strong> Industrial drones now skitter and overheat uncontrollably.</p>
+    <p><strong>Abilities:</strong> Wall leaps, steam bursts</p>
+    <p><strong>Tactics:</strong> Stun mid-leap or lure into vent traps</p>
+    </div>
+    
+    <!-- 3. Foundry Drone (Moltdown) -->
+    <div class="page">
+    <img src="Images/Mobs/10.png" class="mob-image corruptbot">
+    <h3>3. Foundry Drone (Moltdown) <span class="type">[BOSS]</span></h3>
+    <p><strong>Location:</strong> Furnace Core, Brass Borough</p>
+    <p><strong>Appearance:</strong> Lava-armored version of Foundry Drone</p>
+    <p><strong>Lore:</strong> Smelter AI mutated by extreme heat.</p>
+    <p><strong>Abilities:</strong> Lava floor, heat wave, flame bombs</p>
+    <p><strong>Tactics:</strong> Cool vents, jump pad dodging, valve timing</p>
+    </div>
+    
+    <!-- 4. Overgrown Turret Plant -->
+    <div class="page">
+    <img src="Images/Mobs/4.png" class="mob-image corruptbot">
+    <h3>4. Overgrown Turret Plant <span class="type">[Elite Enemy]</span></h3>
+    <p><strong>Location:</strong> Gleam Gardens</p>
+    <p><strong>Appearance:</strong> Carnivorous plant with mech tendrils</p>
+    <p><strong>Lore:</strong> A forgotten security bio-hybrid now rogue.</p>
+    <p><strong>Abilities:</strong> Spore bombs, vine latch, foliage shield</p>
+    <p><strong>Tactics:</strong> Bounce behind or disable with water pipes</p>
+    </div>
+    
+    <!-- 5. Snap Vine -->
+    <div class="page">
+    <img src="Images/Mobs/5.png" class="mob-image corruptbot">
+    <h3>5. Snap Vine <span class="type">[Common Enemy]</span></h3>
+    <p><strong>Location:</strong> Gleam Gardens (walls and platforms)</p>
+    <p><strong>Appearance:</strong> Camouflaged snapping jaws</p>
+    <p><strong>Lore:</strong> Rapid-growth plant mutated by eco-tech.</p>
+    <p><strong>Abilities:</strong> Stuns, ambushes, chain-links</p>
+    <p><strong>Tactics:</strong> Use ranged tools or stealth to bypass</p>
+    </div>
+    
+    <!-- 6. Maintenance Bot -->
+    <div class="page">
+    <img src="Images/Mobs/6.png" class="mob-image corruptbot">
+    <h3>6. Maintenance Bot <span class="type">[Neutral/Hostile]</span></h3>
+    <p><strong>Location:</strong> Multiple districts</p>
+    <p><strong>Appearance:</strong> Round body, tools for arms</p>
+    <p><strong>Lore:</strong> Former helpers—some now corrupted, some friendly NPCs.</p>
+    <p><strong>Variants:</strong> Friendly (e.g., Flicker), Hostile (“Malfunction Mode”)</p>
+    </div>
+    
+    <!-- 7. Glitchspawn -->
+    <div class="page">
+    <img src="Images/Mobs/7.png" class="mob-image corruptbot">
+    <h3>7. Glitchspawn <span class="type">[Rare Enemy]</span></h3>
+    <p><strong>Location:</strong> Volt Vaults, digital terminals</p>
+    <p><strong>Appearance:</strong> Flickering, glitching distortion</p>
+    <p><strong>Lore:</strong> Data ghosts—echoes of corrupted programs.</p>
+    <p><strong>Abilities:</strong> Teleport, temporary invisibility, disable gadgets</p>
+    <p><strong>Tactics:</strong> Track with Hex and strike during pulses</p>
+    </div>
+    
+    <!-- 8. Dimmrking -->
+    <div class="page">
+    <img src="Images/Mobs/3.png" class="mob-image corruptbot">
+    <h3>8. Dimmrking <span class="type">[BOSS]</span></h3>
+    <p><strong>Location:</strong> Volt Vaults – Core Depths</p>
+    <p><strong>Appearance:</strong> Cloaked silhouette, glowing eye</p>
+    <p><strong>Lore:</strong> A corrupted fragment of OROS, born of isolation.</p>
+    <p><strong>Abilities:</strong> Shadow clones, darkness shroud, UI disruption</p>
+    <p><strong>Tactics:</strong> Use light pulses and sound to find and defeat</p>
+    </div>
+    
+    <!-- 9. Geargrind Sentinel V1 -->
+    <div class="page">
+    <img src="Images/Mobs/8.png" class="mob-image corruptbot">
+    <h3>9. Geargrind Sentinel V1 <span class="type">[BOSS / Elite]</span></h3>
+    <p><strong>Location:</strong> Clocktower – Sprocket Square</p>
+    <p><strong>Appearance:</strong> Giant mech with piston arms and gear chest</p>
+    <p><strong>Lore:</strong> A former city defender now enforcing corrupted order.</p>
+    <p><strong>Abilities:</strong> AOE shockwave, spinning gear missiles, magnetic field</p>
+    <p><strong>Tactics:</strong> Disable via short-circuit traps and hit exposed back core</p>
+    </div>
+    
+    <!-- 10. Geargrind Sentinel V2 -->
+    <div class="page">
+    <img src="Images/Mobs/9.png" alt="Geargrind Sentinel V2" class="mob-image" style="width: 200px; height: 200px; object-fit: contain; margin-bottom: 20px;" />
+    <h3>Geargrind Sentinel V2 <span class="type">[BOSS / Reinforced]</span></h3>
+    <p><strong>Location:</strong> Clocktower – Upper Sprocket Square</p>
+    <p><strong>Appearance:</strong> Heavy steel frame, quad-tread legs, reinforced plating, glowing red core</p>
+    <p><strong>Lore:</strong> An upgraded prototype of the original city guardian mech. V2 models were reprogrammed during the Aether lockdown, enforcing corrupted security protocols with brutal efficiency.</p>
+    <p><strong>Abilities:</strong> Reinforced stomp, kinetic charge dash, automated turret burst, magnetic field lockdown</p>
+    <p><strong>Tactics:</strong> Avoid direct hits—use EMP traps and wall-jumps to get behind it. Wait for turret cooldown to strike exposed vents.</p>
+    </div>
+  </div>
+</div>
   </section>
 
   <section id="gallery">

@@ -44,4 +44,56 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+$(function () {
+  const isMobile = window.innerWidth < 768;
+
+  $('#flipbook').turn({
+    width: isMobile ? 400 : 800,
+    height: 600,
+    autoCenter: true,
+    display: isMobile ? 'single' : 'double'
+  });
+
+  let bookOpen = false;
+
+  $('#mobBookCover').click(function () {
+    if (!bookOpen) {
+      $('#flipbook-wrapper').fadeIn(300, function () {
+        initFlipbook();
+      });
+      bookOpen = true;
+    } else {
+      $('#flipbook-wrapper').fadeOut(300);
+      bookOpen = false;
+    }
+  });
+  
+
+  // Page navigation via arrows
+  $(document).on('click', '.nav-arrow.left', function () {
+    $('#flipbook').turn('previous');
+  });
+
+  $(document).on('click', '.nav-arrow.right', function () {
+    $('#flipbook').turn('next');
+  });
+
+  // Swipe support for mobile
+  let touchStartX = 0;
+  $('#flipbook').on('touchstart', function (e) {
+    touchStartX = e.originalEvent.touches[0].clientX;
+  });
+
+  $('#flipbook').on('touchend', function (e) {
+    const touchEndX = e.originalEvent.changedTouches[0].clientX;
+    const deltaX = touchStartX - touchEndX;
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX > 0) {
+        $('#flipbook').turn('next');
+      } else {
+        $('#flipbook').turn('previous');
+      }
+    }
+  });
+});
   

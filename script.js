@@ -65,7 +65,7 @@ $(function () {
     }
   });
 
-  // Page navigation
+  // Page navigation via arrows
   $(document).on('click', '.nav-arrow.left', function () {
     $('#flipbook').turn('previous');
   });
@@ -86,4 +86,24 @@ $(function () {
       deltaX > 0 ? $('#flipbook').turn('next') : $('#flipbook').turn('previous');
     }
   });
+
+  // Mouse scroll support for desktop
+  $('#flipbook').on('wheel', function (e) {
+    e.preventDefault(); // Prevent default scroll behavior
+    if (e.originalEvent.deltaY > 0) {
+      $('#flipbook').turn('next');
+    } else {
+      $('#flipbook').turn('previous');
+    }
+  });
+
+  // Click-to-flip for mouse users
+  $(document).on('click', '.click-zone.left-zone', function () {
+    $('#flipbook').turn('previous');
+  });
+
+  $(document).on('click', '.click-zone.right-zone', function () {
+    $('#flipbook').turn('next');
+  });
+
 });

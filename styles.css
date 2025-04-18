@@ -455,6 +455,50 @@ body {
     background-color: #ffe79f;
   }
 
+  #flipbook-container {
+    position: relative;
+  }
+  
+  .click-zone {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 5;
+    cursor: pointer;
+  }
+  
+  .left-zone {
+    left: 0;
+  }
+  
+  .right-zone {
+    right: 0;
+  }
+  
+  .nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 6;
+    user-select: none;
+    color: #fff;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+  }
+  
+  .nav-arrow.left {
+    left: 10px;
+  }
+  
+  .nav-arrow.right {
+    right: 10px;
+  }
+  
+
   .corruptbot     { background-position:    0px    0px; }
   .foundry-drone  { background-position: -128px    0px; }
   .moltdown       { background-position: -320px    0px; }
@@ -679,7 +723,3 @@ body {
     }
     
   }
-  
-  
-  
-  

@@ -182,6 +182,9 @@
 
   <section id="lands">
     <h2>The Realms of Cog City</h2>
+
+    <p><em>Click on the map below to explore each district of Cog City!</em></p>
+
     <!-- Link the image with a map for clickable areas -->
     <img src="Images/Map3.png" alt="Map" usemap="#cogCityMap" class="four-img"/>
 
@@ -254,18 +257,28 @@
     <p>
       Study well. These machines weren’t built to be merciful.
     </p>
+    <p><em>
+      To use the Mob Book: Click the cover to open it. On desktop, flip pages by clicking and dragging, or use the arrows and page edges to turn. On mobile, swipe left or right to navigate. Click outside the book or press the × to close.
+    </em></p>
     <img src="Images/Mob Manual Font Page.png" alt="Mobs" id="mobBookCover" class="four-img" style="cursor: pointer;" />
-
-</div>
 
 <div id="flipbook-wrapper">
   <div id="flipbook-container">
     <button class="close-flipbook" onclick="closeFlipbook()">×</button>
 
+    <!-- Optional visible arrow buttons -->
+    <div class="nav-arrow left">←</div>
+    <div class="nav-arrow right">→</div>
+
+    <!-- Click zones for page flip (left and right halves) -->
+    <div class="click-zone left-zone"></div>
+    <div class="click-zone right-zone"></div>
+
+    <!-- The actual flipbook -->
     <div id="flipbook">
 
-
-    <div class="page cover">
+      <!-- Your page content here -->
+      <div class="page cover">
         <img src="Images/Mob Manual Font Page.png" alt="Gearbound Mob Field Manual Cover" />
       </div>
     
@@ -349,7 +362,7 @@
     <div class="page">
     <img src="Images/Mobs/3.png" class="mob-image corruptbot">
     <h3>8. Dimmrking <span class="type">[BOSS]</span></h3>
-    <p><strong>Location:</strong> Volt Vaults – Core Depths</p>
+    <p><strong>Location:</strong> Volt Vaults - Core Depths</p>
     <p><strong>Appearance:</strong> Cloaked silhouette, glowing eye</p>
     <p><strong>Lore:</strong> A corrupted fragment of OROS, born of isolation.</p>
     <p><strong>Abilities:</strong> Shadow clones, darkness shroud, UI disruption</p>
@@ -360,7 +373,7 @@
     <div class="page">
     <img src="Images/Mobs/8.png" class="mob-image corruptbot">
     <h3>9. Geargrind Sentinel V1 <span class="type">[BOSS / Elite]</span></h3>
-    <p><strong>Location:</strong> Clocktower – Sprocket Square</p>
+    <p><strong>Location:</strong> Clocktower - Sprocket Square</p>
     <p><strong>Appearance:</strong> Giant mech with piston arms and gear chest</p>
     <p><strong>Lore:</strong> A former city defender now enforcing corrupted order.</p>
     <p><strong>Abilities:</strong> AOE shockwave, spinning gear missiles, magnetic field</p>
@@ -408,7 +421,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Gearbound Studios. All rights reserved. (V3.3)</p>
+    <p>&copy; 2025 Gearbound Studios. All rights reserved. (V3.4)</p>
   </footer>
 
   <button id="back-to-top">↑ Top</button>
